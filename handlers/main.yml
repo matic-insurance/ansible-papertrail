@@ -1,0 +1,4 @@
+---
+# handlers file for papertrail
+- name: Restart rsyslog
+  service: name=rsyslog state=restarted

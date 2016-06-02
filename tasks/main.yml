@@ -1,0 +1,14 @@
+---
+# tasks file for papertrail
+- name: Install rsyslog-gnutls
+  apt: name=rsyslog-gnutls state=present
+
+- name: Copy papertrail-bundle.pem
+  copy: src=papertrail-bundle.pem dest=/etc/papertrail-bundle.pem
+  notify:
+    - Restart rsyslog
+
+- name: Render 99-papertrail.conf
+  template: src=99-papertrail.conf.j2 dest=/etc/rsyslog.d/99-papertrail.conf
+  notify:
+    - Restart rsyslog
