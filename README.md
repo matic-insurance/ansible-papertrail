@@ -1,6 +1,8 @@
 papertrail
 =========
 
+[![Build Status](https://travis-ci.org/matic-insurance/ansible-papertrail.svg?branch=master)](https://travis-ci.org/matic-insurance/ansible-papertrail)
+
 Setup PapertrailApp remote logging on server.
 
 Currently, supports only `rsyslog` service.
