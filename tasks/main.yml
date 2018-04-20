@@ -1,7 +1,9 @@
 ---
 # tasks file for papertrail
 - name: Install rsyslog-gnutls
-  apt: name=rsyslog-gnutls state=present
+  package:
+    name: rsyslog-gnutls
+    state: present
 
 - name: Copy papertrail-bundle.pem
   copy: src=papertrail-bundle.pem dest=/etc/papertrail-bundle.pem
